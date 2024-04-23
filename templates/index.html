@@ -31,32 +31,31 @@
   <div class="carousel-inner">
     <!-- Single item -->
     <div class="carousel-item active">
-      <img src="https://mdbcdn.b-cdn.net/img/Photos/Slides/img%20(15).webp" class="d-block w-100" alt="Sunset Over the City"/>
+      <img src="https://sun9-43.userapi.com/impg/qOKqtwneflxnXVVkoJ83ef9Iiptoy2xZs9wtYw/sq6wjqHU77I.jpg?size=2560x1707&quality=95&sign=741cae6ff6014ea82c6659c370a513c6&type=album" class="d-block w-100" alt="bird bone"/>
       <div class="carousel-caption d-none d-md-block">
-        <h5>First slide label</h5>
-        <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+        <p>Bird Bone</p>
       </div>
     </div>
 
     <!-- Single item -->
     <div class="carousel-item">
-      <img src="https://mdbcdn.b-cdn.net/img/Photos/Slides/img%20(22).webp" class="d-block w-100" alt="Canyon at Nigh"/>
+      <img src="https://sun9-59.userapi.com/impg/oBU49i4P3P8hLr_QU5GVroxnNtVpE9eKrsFvCA/4dnkOVsptYU.jpg?size=2560x1707&quality=96&sign=3ac0bf45ffcd41b8cf249c5431b78209&type=album" class="d-block w-100" alt="veresk"/>
       <div class="carousel-caption d-none d-md-block">
-        <h5>Second slide label</h5>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        <p>veresk</p>
       </div>
     </div>
 
     <!-- Single item -->
     <div class="carousel-item">
-      <img src="https://mdbcdn.b-cdn.net/img/Photos/Slides/img%20(23).webp" class="d-block w-100" alt="Cliff Above a Stormy Sea"/>
+      <img src="https://sun9-20.userapi.com/impg/-n9nb_-VKOwSTDhhS50SG8B2EwK7SjS0xPC9dw/wIsmXznxXEw.jpg?size=2560x1707&quality=95&sign=bfd00169d0536734f7d38e482977adb8&type=album" class="d-block w-100" alt="Кауч-серфинг"/>
       <div class="carousel-caption d-none d-md-block">
-        <h5>Third slide label</h5>
-        <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+        <p>Кауч-серфинг</p>
       </div>
     </div>
   </div>
   <!-- Inner -->
+
+
 
   <!-- Controls -->
   <button class="carousel-control-prev" type="button" data-mdb-target="#carouselBasicExample" data-mdb-slide="prev">
@@ -69,4 +68,31 @@
   </button>
 </div>
 <!-- Carousel wrapper -->
+
+<div class="container mt-5">
+    <div class="row">
+      {% for el in goods %}
+
+      <div class="col-md-4">
+        <div class="product">
+          <div class="image">
+            <img src="{{ el.picture_address }}" alt="">
+          </div>
+          <div class="info">
+            <h5 style="margin-top: 10px; margin-left: 5px;"><small>{{ categories[el.category] }}</small></h5>
+            <h3 style="margin-top: 10px; margin-left: 5px;">{{ el.title }}</h3>
+            <div class="info-price">
+              <span class="price" style="margin-left: 5px;">{{ el.price }}₽</span>
+              <a href="/goods/{{ el.id }}">
+                <a class="btn btn-primary" href="/catalog/{{ el.id }}" role="button">
+                  <ion-icon name="cart"></ion-icon>
+                </a>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
 {% endblock %}

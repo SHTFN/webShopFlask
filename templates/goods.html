@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container-product">
+    <main class="main">
+        <div class="main-photo">
+            <img src="{{ product.picture_address }}">
+        </div>
+        <div class="main-details">
+            <span class="main-details-vendor">#{{ product.id }}</span>
+            <h1 class="main-detail-title">{{ product.title }}</h1>
+            <p class="main-details-text">{{ product.about }}</p>
+
+            <div class="main-details-price">
+                <span class="main-details-price-price">{{ product.price }}<small>Delivery is free</small></span>
+                <div class="main-details-price-action">
+                    <a href="/add_to_cart/{{ product.id }}">
+                        <button class="btn btn-success">В корзину</button>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </main>
+</div>
+{% endblock %}

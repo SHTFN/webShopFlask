@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <title>{{ title }}</title>
+    <title>Material Design for Bootstrap</title>
+    <!-- MDB icon -->
+    <link rel="icon" href="img/mdb-favicon.ico" type="image/x-icon" />
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <!-- Google Fonts Roboto -->
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap"
+    />
+    <!-- MDB -->
+    <link rel="stylesheet" href="../static/css/mdb.min.css" />
+    <!-- User style -->
+    <link rel="stylesheet" href="../static/css/style.css" />
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-body-tertiary">
+      <!-- Container wrapper -->
+      <div class="container-fluid">
+        <!-- Toggle button -->
+        <button
+          data-mdb-collapse-init
+          class="navbar-toggler"
+          type="button"
+          data-mdb-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <i class="fas fa-bars"></i>
+        </button>
+
+        <!-- Collapsible wrapper -->
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <!-- Navbar brand -->
+          <a class="navbar-brand mt-2 mt-lg-0" href="/">
+            <img
+              src="../static/img/logo.webp"
+              height="50"
+              alt="MDB Logo"
+              loading="lazy"
+            />
+          </a>
+          <!-- Left links -->
+          <!--
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link" href="#">Dashboard</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Team</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Projects</a>
+            </li>
+          </ul>
+          -->
+          <!-- Left links -->
+        </div>
+        <!-- Collapsible wrapper -->
+        {% if current_user.is_authenticated %}
+                <div class="d-flex align-items-center">
+          <!-- Icon -->
+          <a class="text-reset me-3" href="/cart">
+            <i class="fas fa-shopping-cart"></i>
+          </a>
+          <!-- Avatar -->
+          <div class="dropdown">
+            <a
+              data-mdb-dropdown-init
+              class="dropdown-toggle d-flex align-items-center hidden-arrow"
+              href="#"
+              id="navbarDropdownMenuAvatar"
+              role="button"
+              aria-expanded="false"
+            >
+              <img
+                src="https://www.imagensempng.com.br/wp-content/uploads/2021/08/Icone-usuario-Png.png"
+                class="rounded-circle"
+                height="25"
+                alt="Black and White Portrait of a Man"
+                loading="lazy"
+              />
+            </a>
+            <ul
+              class="dropdown-menu dropdown-menu-end"
+              aria-labelledby="navbarDropdownMenuAvatar"
+            >
+              <li>
+                <a class="dropdown-item" href="/profile">My profile</a>
+              </li>
+              <li>
+                <a class="dropdown-item" href="/logout">Logout</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+              {% else %}
+                <p>
+                  <a class="btn btn-primary" href="/register">Зарегистрироваться</a>
+                  <a class="btn btn-success" href="/login">Войти</a>
+                </p>
+              {% endif %}
+
+        <!-- Right elements -->
+
+        <!-- Right elements -->
+      </div>
+      <!-- Container wrapper -->
+    </nav>
+    <!-- Navbar -->
+
+    <main role="main" class="container">
+    {% block content %}{% endblock %}
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-body-tertiary text-center text-lg-start" style="margin-top: 20px;">
+      <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.05);">
+        Completed as part of the Yandex.Lyceum curriculum
+      </div>
+    </footer>
+
+
+    <!-- MDB -->
+    <script type="text/javascript" src="../static/js/mdb.umd.min.js"></script>
+    <!-- Custom scripts -->
+    <script type="text/javascript"></script>
+    <!-- Ionicons -->
+    <script src="https://unpkg.com/ionicons@4.1.2/dist/ionicons.js"></script>
+  </body>
+</html>

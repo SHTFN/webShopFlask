@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Корзина</h1>
+{% if cart != [] %}
+    {% for el in cart %}
+        <div class="product">
+            <h5 style="opacity: 0.4;">{{ loop.index }}</h5>
+            <h4>{{ el['title'] }}</h4>
+            <h4>{{ el['price'] }}₽</h4>
+            <a href="/delete_from_cart/{{ el['product_id'] }}"><button class="btn btn-danger">Удалить из корзины</button></a>
+        </div>
+    {% endfor %}
+{% else %}
+<h2>Ваша корзина пуста</h2>
+{% endif %}
+{% endblock %}
