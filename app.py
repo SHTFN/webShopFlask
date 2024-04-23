@@ -162,7 +162,7 @@ def cart():
 def main():
     db_session.global_init('db/shop.sqlite')  # Соединение с базой данных
     app.register_blueprint(goods_api.blueprint)  # Подключение обработчика для работы с REST-API
-    app.run()
+    app.run(host='0.0.0.0', port=5000, debug=True)
 
 
 if __name__ == '__main__':
